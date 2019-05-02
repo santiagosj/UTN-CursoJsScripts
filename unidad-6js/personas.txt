@@ -1,0 +1,11 @@
+﻿[
+{"id":"1","nombre":"Graciela"},
+{"id":"2","nombre":"Juan"},
+{"id":"3","nombre":"Pedro"},
+{"id":"4","nombre":"Susana"},
+{"id":"5","nombre":"Estela"},
+{"id":"6","nombre":"Francisco"},
+{"id":"7","nombre":"Veronica"},
+{"id":"8","nombre":"Sofía"},
+{"id":"9","nombre":"Alejandro"}
+]

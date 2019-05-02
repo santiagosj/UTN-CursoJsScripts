@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Propuesta1</title>
+
+<style media="screen">
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+.intro{
+  height:100%;
+  width:100%;
+  margin: auto;
+  background-image:url(https://images.unsplash.com/photo-1477244075012-5cc28286e465?auto=format&fit=crop&w=334&q=80);
+  display: table;
+  top: 0;
+  background-size: cover;
+}
+.intro .inner{
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  max-width: none;
+}
+.content{
+  max-width:500px;
+  margin:0 auto;
+  text-align:center;
+}
+.content h1 {
+  font-family:'Raleway', sans-serif;
+  color: #F9F3F4;
+  text-shadow: 0px 0px 300px #000;
+  font-size: 500%;
+}
+.btn{
+  border-radius:9px;
+  font-family: 'Oswald', sans-serif;
+  color: #036A81;
+  font-size: 135%;
+  padding: 10px 20px;
+  border: solid #036A81 2px;
+  transform: uppercase;
+  text-decoration: none;
+}
+.btn:hover{
+  color: #fff;
+  border: solid #fff 2px;
+}
+@media screen and (max-width: 768px){
+  .content h1 {
+    font-size: 250%;
+  }
+  .btn{
+    font-size: 110%;
+    padding: 7px 15px;
+  }
+}
+</style>
+  </head>
+  <body>
+    <section class="intro">
+
+    <div class="inner">
+      <div class="content">
+  <h1>Ingrese un valor numerico por favor</h1>
+  <button class="btn" onclick="nerd();">Empesar</button>
+      </div>
+    </div>
+  </section>
+
+    <script>
+    function nerd(){
+    var valor1 = prompt('ingrese un valor numérico, valor 1');
+    var valor2 = prompt('ingrese un valor numérico, valor 2');
+    var valor3 = prompt('ingrese un valor numérico, valor 3');
+      if (valor1 > valor2) {
+        window.alert("valor1 es mayor que valor2");
+      }
+      if(valor3 > 0){
+        window.alert("valor3 es positivo");
+      }
+      if(valor2 != 0){
+        window.alert("valor2 es distinto de cero");
+      }
+      if (valor1 + 1 <= valor2) {
+        window.alert("sumar 1 a valor1 no lo hace mayor o igual que valor 2")
+      }
+    }
+    </script>
+
+  </body>
+</html>

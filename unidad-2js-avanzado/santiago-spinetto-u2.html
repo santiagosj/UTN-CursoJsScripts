@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Jquery</title>
+    <link rel="stylesheet" href="santiago-spinetto-u2.css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+
+     $(document).ready(function(){
+
+//usando el metodo .css y animando elem1 con efecto .slideDown()
+     $("#elem1").css({
+       "position":"relative",
+       "margin":"0",
+       "bottom":"690px",
+       "left":"50px",
+       "display":"none"
+     });
+    $("#elem1").slideDown(2000);
+
+//usando el metodo .css y animando elem2 con efecto .slideDown()
+     $("#elem2").css({
+       "position":"relative",
+       "margin":"0",
+       "bottom":"670px",
+       "left":"50px",
+       "color":"white",
+       "text-transform":"uppercase",
+       "font-size":"2em",
+      "display":"none"
+     });
+    $("#elem2").slideDown(4000);
+
+//usando el metodo .css y animando elem3 con efecto .slideDown()
+     $("#elem3").css({
+     "position":"relative",
+     "margin":"0",
+     "bottom":"640px",
+     "left":"50px",
+     "display":"none"
+     });
+$("#elem3").slideDown(6000);
+
+//usando el metodo .css y animando elem4 con efecto .slideDown()
+     $("#elem4").css({
+       "position":"relative",
+       "margin":"0",
+       "bottom":"620px",
+       "left":"50px",
+       "color":"red",
+       "text-transform":"uppercase",
+       "font-size":"2em",
+       "opacity":"0.8",
+       "display":"none"
+     });
+ $("#elem4").slideDown(8000);
+
+//usando el metodo .css y animando con efecto fadeTo() el contenido, tambien se puede animar con el efecto fadeIn() y queda a mi criterio muy bien..
+     $('#contenido').css({
+       "position":"fixed",
+       "bottom":"120px",
+       "left":"400px",
+       "margin":"0",
+       "width":"700px",
+       "heigth":"1000px",
+       "padding":"20px",
+       "padding-bottom":"50px",
+       "padding-top":"30px",
+       "border":"solid grey 1px",
+       "background-color":"black",
+       "color":"white",
+     });
+$("#contenido").fadeTo(15000, 0.8);
+
+//usando el metodo .css en el menú
+     $('#menu').css({
+      "position":"fixed",
+      "margin":"0",
+      "bottom":"50px",
+      "left":"300px"
+   });
+
+//eventos con el mouse..mouseenter() y mouseleave()..con efecto slideDown() y slideUp()
+$("#mensaje").mouseenter(function(){
+$("#pop").slideDown("slow")
+});
+$("#pop").mouseleave(function(){
+  $("#pop").slideUp("slow")
+});
+
+   });
+
+    </script>
+  </head>
+  <body>
+    <div id="contenedor">
+      <img src="img\fondo1.jpg" style="max-width:1400px;">
+      <div id="elem1">
+      <img src="img\logo.png">
+      </div>
+      <div id="elem2">
+      <p >representante <br>oficial</p>
+      </div>
+      <div id="elem3">
+      <img src="img\rielamericano.png" >
+      </div>
+      <div id="elem4">
+      <p >mirar <br>tiene <br> sentido</p>
+      </div>
+      <div id="contenido">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <br><br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <br><br>
+      <a href="#" id="mensaje"style="color:red ; float:right; text-decoration:none">Ver datos de contacto</a>
+      <br>
+      <div id="pop" style="display:none; background-color:red; text-align:center">
+          Mendoza 3456 - CABA <br>
+          54 11 4521-6778 <br>
+          informes@misitio.com.ar
+      </div>
+      </div>
+
+      <div id="menu">
+      <a href="#" style="padding-right:10px;text-decoration:none;color:black;border-bottom:solid 2px red">Home</a>
+      <a href="#" style="padding-right:10px;text-decoration:none;color:black">Quienes somos</a>
+      <a href="#" style="padding-right:10px;text-decoration:none;color:black">Sevicios</a>
+      <a href="#" style="padding-right:10px;text-decoration:none;color:black">Cortinas Rielamericano</a>
+      <a href="#" style="padding-right:10px;text-decoration:none;color:black">Cortinas a medida</a>
+      <a href="#" style="padding-right:10px;text-decoration:none;color:black">Donde encontrarnos</a>
+      <a href="#" style="padding-right:10px;text-decoration:none;color:black">Contacto</a>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario</title>
+    <link  href="jquery-ui.css" rel="stylesheet"/>
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.js"></script>
+<style media="screen">
+  .demoHeaders {
+		margin-top: 2em;
+	}
+</style>
+    <script type="text/javascript">
+
+     $(document).ready(function(){
+
+       $("#confirmar, #confirmar-2").dialog({
+         modal: true,
+         autoOpen: false,
+         buttons:{
+           "0k":function(){
+             $(this).dialog('close');
+           }
+         }
+       });
+
+       $('#button').button();
+
+       //---la restriccion de edad la hago condicionando el datepicker() 
+       $('#born').datepicker({
+         minDate: new Date(1900,1-1,1), maxDate: '-18Y',
+         dateFormat: 'dd/mm/yy',
+         defaultDate: new Date(1970,1-1,1),
+         changeMonth: true,
+         changeYear: true,
+         yearRange: '-110:-18'
+       });
+
+
+              $('#nombre').on('blur', function(){
+                if ($('#nombre').val().length < 5 ){
+                      $('#confirmar').dialog('open');
+
+                }
+                return false;
+              });
+
+            $('#apellido').on('blur', function(){
+              if ($("#apellido").val().length < 4 ){
+                     $('#confirmar').dialog('open');
+               }
+               return false;
+             });
+
+           $('#born').on('blur', function(){
+             if ($('#born').val().length < 1) {
+                   $('#confirmar').dialog('open');
+             }
+             return false;
+           });
+
+           $('#correo').on('blur', function(){
+             if ($('#correo').val().length < 1) {
+                   $('#confirmar').dialog('open');
+
+             } else if ($('#correo').val().indexOf('@', 0)== -1 || $("#correo").val().indexOf('.', 0) == -1) {
+                   $('#confirmar').dialog('open');
+             }
+             return false;
+           });
+
+               $('#telefono').on('blur', function(){
+                 if (isNaN($('#telefono').val())) {
+                       $('#confirmar').dialog('open');
+                 }
+                 return false;
+               });
+
+              $('#usuario').on('blur', function() {
+                if ($('#usuario').val().length < 8) {
+                     $('#confirmar').dialog('open');
+                }
+                return false;
+              });
+
+              $('#password-1').on('blur', function(){
+                if ($('#password-1').val().length < 8) {
+                     $('#confirmar').dialog('open');
+                }
+                return false;
+              })
+
+              $('#password-2').on('blur', function(){
+                 if ($('#password-1').val() != $('#password-2').val() || $('#password-2').val().length == " ") {
+                       $('#confirmar').dialog('open');
+                 }else {
+                   $('#confirmar-2').dialog('open')
+                 }
+                 return false;
+              });
+	     
+	     $('#password-2').on('blur', function(){
+                $('input').each(function(){
+                  if ($(this).val().length == " ") {
+                    $('#confirmar').dialog('open');
+                  } else {
+                    $('#confirmar-2').dialog('open')
+                  }
+                })
+                return false;
+              });
+
+ $('#button').on('click', function(){
+
+                   $('input').each(function(){
+
+                     if ($(this).val()=="") {
+
+                       $('#confirmar').dialog('open');
+
+                     }else{
+			     
+		         $('#button').on('click', function(){
+
+                          $('#form').submit()
+
+                        })
+		     }
+                   })
+                   return false;
+                 })    
+
+           return true;
+        });
+
+    </script>
+
+  </head>
+  <body>
+
+<form class="demoHeaders" id="form" action="" method="post">
+  Nombre: <input class="demoHeaders" id="nombre"  placeholder="Nombre" >
+  <br><br>
+ Apellido:<input class="demoHeaders" id="apellido"  placeholder="Apellido" >
+  <br><br>
+  Fecha de nacimiento: <input class="demoHeaders" id="born">
+  <br><br>
+  E-mail: <input class="demoHeaders" id="correo" placeholder="ejemplo@gmail.com" >
+  <br><br>
+  Telefono: <input class="demoHeaders" id="telefono"  placeholder="Telefono">
+  <br><br>
+  Usuario: <input class="demoHeaders" id="usuario"  placeholder="Usuario">
+  <br><br>
+  Contraseña: <input class="demoHeaders" id="password-1" type="password" placeholder="Contraseña">
+  <br><br>
+   Repita la contraseña: <input class="demoHeaders" id="password-2" type="password" onblur="" placeholder="Contraseña">
+  <br><br>
+  <button  id="button" type="submit" name="button"> Enviar </button>
+  <div id="confirmar">
+    <p>
+     <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+     Verifique la informacion antes de enviarla.El campo está incompleto o la informacion es incorrecta, todos los campos son obligatorios.
+   </p>
+  </div>
+
+  <div id="confirmar-2">
+    <p>
+     <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+     Ha completado todo el formulario. Verifique la informacion.
+   </p>
+  </div>
+
+
+</form>
+
+  </body>
+</html>

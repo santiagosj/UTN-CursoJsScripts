@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+body{
+margin: 0;
+padding: 0;
+background: -webkit-linear-gradient(#EBDBE2, #D6DCEC, #ECE5D6);
+}
+ h2 {
+   margin-top:30px;
+   padding: 10px;
+  text-align: center;
+  font-family: 'Poiret One', cursive;
+}
+.contenedor{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content:space-around;
+}
+
+img {
+  max-width: 300px;
+  max-height: 300px;
+  margin:0;
+  padding:60px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.row-1 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.row-2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.row-3 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.seta {
+      transform: scale(0.7 , 0.7 );
+      transition: 2s;
+}
+.seta:hover{
+  transform:  scale(1.5,1.5);
+  transition:1s;
+  animation-delay: 6s;
+}
+
+.musica {
+  position: relative;
+  left: 20px;
+  transform: rotate(30deg);
+  transform-origin: 5% 30%;
+  transition: 5s;
+}
+.musica:hover{
+  transform:rotateY(360deg);
+  transition:2s;
+  animation-duration: 5s;
+}
+
+.tapita {
+transform: scale3d(30deg);
+transition: 3s;
+animation-duration: 6s;
+}
+.tapita:hover{
+transform: rotateX(90deg);
+transition: 2s;
+}
+
+.emoticon {
+transform: rotateX(360deg);
+transition: 1s;
+animation-fill-mode: backwards;
+}
+.emoticon:hover{
+  transform: translateY(50px) rotateX(180deg);
+  transition: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+.escuchar {
+transform:rotateY(360deg);
+transition: 2s;
+animation-direction: reverse;
+}
+.escuchar:hover{
+  transform: rotateY(180deg);
+  transition: 3s;
+  animation-delay: 6s;
+}
+
+#pelota {
+transform: scale(0.5,0.5) rotate(180deg);
+transition: 3s;
+animation-direction: reverse;
+}
+#pelota:hover{
+transform: translateX(1000px) rotate(360deg) rotateZ(500deg);
+  transition: 7s;
+
+}
+
+.pelota2 {
+transform: scale(0.7, 0.7);
+transition: 1s;
+animation: 2s;
+}
+.pelota2:hover{
+  transform: scale(1.3 , 1.3);
+  transition: 3s;
+  opacity: 0;
+  animation-delay: 5s;
+}
+
+.pelota3 {
+transform:translateY(-60px) ;
+transition: 2s;
+animation-fill-mode:both;
+}
+.pelota3:hover{
+  transform:translateY(150px) ;
+  transition: 2s;
+}
+
+.pokemon {
+transform: rotate(360deg);
+transition: 2s;
+animation: 3s;
+}
+.pokemon:hover{
+transform: rotate(180deg);
+transition: 2s;
+animation-direction: reverse;
+}

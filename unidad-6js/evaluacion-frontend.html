@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.js"></script>
+
+    <style media="screen">
+
+      div{
+        width: 300px;
+        border: 1px solid black;
+        display: block;
+        text-align: center;
+        padding-right: 40px;
+      }
+      #seleccionAlumnos{
+        height: 150px;
+        width: 300px;
+        padding-left: 10px;
+      }
+      li{
+        text-decoration: none;
+        list-style-type: none;
+      }
+      li:hover{
+      cursor:pointer;
+      color:red;
+      }
+
+      #campoAlumnos{
+        padding: 30px;
+      }
+
+    </style>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+           $("#listaAlumnos li").draggable({
+             	appendTo: "body",
+              	helper: "clone"
+           });
+
+           $("#seleccionAlumnos ol").droppable({
+             activeClass: "ui-state-default",
+             hoverClass: "ui-state-hover",
+             accept: ":not(.ui-sortable-helper)",
+             drop: function( event, ui ) {
+                   $( this ).find( ".placeholder" ).remove();
+               if ($("#campoAlumnos").children('li').length <= 3) {
+
+                    $( "<li></li>" ).text( ui.draggable.text() ).appendTo( this );
+
+               } else {
+
+                 alert('Solo puede seleccionar tres(3) alumnos')
+
+               }
+             }
+           }).sortable({
+             items: "li:not(.placeholder)",
+             sort: function() {
+               $( this ).removeClass( "ui-state-default" );
+             }
+           });
+
+            $("#alumnos li").on('click', function(){
+
+              if ($("#campoAlumnos").children('li').length <= 3) {
+
+                    $(this).appendTo("#campoAlumnos")
+
+              } else {
+
+                alert('Solo puede seleccionar tres(3) alumnos')
+
+              }
+            })
+         });
+
+    </script>
+  </head>
+  <body>
+    <h4>Lista de alumnos</h4>
+<div id="listaAlumnos" >
+  <ul id="alumnos" class="placeholder">
+    <li id="1">Graciela</li>
+    <br>
+    <li id="2">Juan</li>
+    <br>
+    <li id="3">Pedro</li>
+    <br>
+    <li id="4">Estela</li>
+    <br>
+    <li id="5">Francisco</li>
+    <br>
+    <li id="6">Susana</li>
+    <br>
+    <li id="7">Sofía</li>
+    <br>
+    <li id="8">Veronica</li>
+    <br>
+    <li id="9">Alejandro</li>
+  </ul>
+</div>
+<br><br>
+<h3>Haga click sobre el alumno que desea seleccionar o arrastre y suelte al alumno en el campo de seleccion</h3>
+<br><br>
+<h4>Alumnos seleccionados</h4>
+<div id="seleccionAlumnos" class="placeholder">
+     <ol id="campoAlumnos" class="ui-widget-content">
+         	<li></li>
+     </ol>
+</div>
+
+  </body>
+</html>

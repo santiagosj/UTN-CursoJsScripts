@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="jquery.slider.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+			  $("#imagenes").slider(); 
+		         /* $("#imagenes").slider({
+		               efecto:'slideDown',
+                               velocidadEfecto:1000,
+			       pausaEfecto:1000
+			  });*/
+	                   
+
+	});
+</script>
+<style type="text/css">
+	#imagenes{
+		width: 600px;
+		height: 450px;
+		border: 1px solid grey;
+		position: relative;
+		overflow: hidden;
+	}
+
+</style>
+</head>
+
+<body>
+<h2>Slider</h2>
+<div id="imagenes">
+    <div><img src="img/foto1.jpg" id="foto1" /></div>
+    <div><img src="img/foto2.jpg" id="foto2" /></div>
+    <div><img src="img/foto3.jpg" id="foto3" /></div>
+</div>
+</body>
+</html>

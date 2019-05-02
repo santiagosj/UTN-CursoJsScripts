@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Propuesta3</title>
+
+    <style media="screen">
+    @import url('https://fonts.googleapis.com/css?family=Raleway');
+    @import url('https://fonts.googleapis.com/css?family=Oswald');
+    html, body{
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+    #lluvia{
+      margin: 0;
+      padding: 0;
+      display:none;
+      width:300px;
+      position:relative;
+      left:20%;
+      border-radius:5px;
+    }
+    .intro{
+      height:100%;
+      width:100%;
+      margin: auto;
+      background-image: url(https://images.unsplash.com/photo-1417640712331-47f5ff77ce29?auto=format&fit=crop&w=750&q=80);
+      display: table;
+      top: 0;
+      background-size: cover;
+    }
+    .intro .inner{
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+      max-width: none;
+    }
+    .content{
+      max-width:500px;
+      margin:0 auto;
+      text-align:center;
+    }
+    .content h1 {
+      font-family:'Raleway', sans-serif;
+      color: #F9F3F4;
+      text-shadow: 0px 0px 300px #000;
+      font-size: 400%;
+    }
+
+    #btn{
+      padding: 20px;
+    }
+    .btn{
+      border-radius:9px;
+      font-family: 'Oswald', sans-serif;
+      color: #036A81;
+      font-size: 135%;
+      padding: 10px 20px;
+      border: solid #036A81 2px;
+      transform: uppercase;
+      text-decoration: none;
+    }
+    .btn:hover{
+      color: #fff;
+      border: solid #fff 2px;
+    }
+    @media screen and (max-width: 768px){
+      .content h1 {
+        font-size: 250%;
+      }
+      .btn{
+        font-size: 110%;
+        padding: 7px 15px;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <section class="intro">
+
+    <div class="inner">
+      <div class="content">
+        <h1>Dia de lluvia</h1>
+        <img id="lluvia"src="https://images.unsplash.com/photo-1509910673751-ce7e70e08512?auto=format&fit=crop&w=1534&q=80">
+        <br>
+        <div id="btn">
+          <button class="btn"type="button" onclick="miFuncion()">click</button>
+          <button class="btn"type="button" onclick="miFuncion2()">click</button>
+          <button class="btn"type="button" onclick="miFuncion3()">click</button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+    <script>
+function miFuncion(){
+document.getElementById('lluvia').style.display="block";
+}
+function miFuncion2(){
+  document.getElementById('lluvia').style.display="none";
+}
+function miFuncion3(){
+  document.getElementById('btn').style.display="none";
+}
+    </script>
+  </body>
+</html>
